@@ -68,6 +68,18 @@ The data cleaning and preparation phase involves transforming raw data into a st
 ![Average sales by product](https://github.com/user-attachments/assets/79ba69e6-b72a-49b0-be60-2b363a0da5b5)
 
    
-   - Create any other interesting report![SalesData Visuals](https://github.com/user-attachments/assets/40c23314-7333-4d7a-9bb1-a9525bb5fa6a)
+   - Create any other interesting report
+![SalesData Visuals](https://github.com/user-attachments/assets/40c23314-7333-4d7a-9bb1-a9525bb5fa6a)
+
+   -Analyze customer data using pivot tables to find subscription patterns. 
+![Customers Pivot](https://github.com/user-attachments/assets/9d6f2e8c-109c-4917-bbdf-5021e65e31d6)
+   -Calculate the average subscription duration and identify the most popular 
+     subscription types. 
+
+![Subscrition Duration](https://github.com/user-attachments/assets/c4a71833-d3ae-4d84-8d9e-63dc66087f69)
+   -Create any other interesting reports.
+
+![Subscription Visuals](https://github.com/user-attachments/assets/1c511d18-830d-4019-8d68-2462063b338b)
+
 
 
