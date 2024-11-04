@@ -349,7 +349,37 @@ FROM
     Customers
 GROUP BY 
     Cancelled;
+~~~
+### SQL OUTPUT 2
+---
+ - retrieve the total number of customers from each region.
+![1](https://github.com/user-attachments/assets/9a47a4d0-fb6a-4591-8a14-89fe813faafa)
 
+ - find the most popular subscription type by the number of customers.
+![2](https://github.com/user-attachments/assets/0d4693d0-9620-4f39-8267-225ad09a8479)
+
+ - find customers who canceled their subscription within 6 months.
+![3](https://github.com/user-attachments/assets/8bc6bf05-5a60-4ae6-a328-537c5ad81776)
+
+ - calculate the average subscription duration for all customers.
+
+![4](https://github.com/user-attachments/assets/b0936681-4e15-4601-9fb7-271f1690f1d2)
+
+ - find customers with subscriptions longer than 12 months.
+
+![5](https://github.com/user-attachments/assets/ea5e531a-e794-44d8-90b7-4a639ad01ea5)
+
+ - calculate total revenue by subscription type.
+
+![6](https://github.com/user-attachments/assets/5ff4b775-a86a-465e-9f6b-ea5b08c92bef)
+
+ - find the top 3 regions by subscription cancellations.
+
+![7](https://github.com/user-attachments/assets/1d45edc6-0997-4e95-9d73-06dc09c96101)
+
+ - find the total number of active and canceled subscriptions.
+
+![8](https://github.com/user-attachments/assets/3ddf585b-c227-4162-a8d5-fbb07d37ee2b)
 
 
 
