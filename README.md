@@ -57,8 +57,17 @@ The data cleaning and preparation phase involves transforming raw data into a st
 ---
   ### Questions to be answered after initial exploration
  - Excel:
-   o Use pivot tables to summarize total sales by product, region, and month.
-   o Use Excel formulas to calculate metrics such as average sales per product and 
+   - Perform an initial exploration of the sales data. Use pivot tables to summarize 
+     total sales by product, region, and month.
+
+![Summarization using Pivot](https://github.com/user-attachments/assets/cba52f2f-cc09-45ea-8523-941c38fd674b)
+
+   - Use Excel formulas to calculate metrics such as average sales per product and 
      total revenue by region.
-   o Create any other interesting report.
+
+![Average sales by product](https://github.com/user-attachments/assets/79ba69e6-b72a-49b0-be60-2b363a0da5b5)
+
    
+   - Create any other interesting report![SalesData Visuals](https://github.com/user-attachments/assets/40c23314-7333-4d7a-9bb1-a9525bb5fa6a)
+
+
