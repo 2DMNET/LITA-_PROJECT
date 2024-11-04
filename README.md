@@ -61,4 +61,4 @@ The data cleaning and preparation phase involves transforming raw data into a st
    o Use Excel formulas to calculate metrics such as average sales per product and 
      total revenue by region.
    o Create any other interesting report.
- https://github.com/2DMNET/LITA-_PROJECT/blob/main/Average%20sales%20by%20product.png
+   
