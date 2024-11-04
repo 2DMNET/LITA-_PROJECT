@@ -2,7 +2,7 @@
 ---
 ### Project Title : Sales Record Analysis 
 ---
-[Project Overview](#project-overview)
+[Project Overview](#project-overvieww)
 
 [Data Sources](#data-sources)
 
