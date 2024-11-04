@@ -210,5 +210,38 @@ WHERE
         WHERE 
             OrderDate >= DATEADD(QUARTER, -1, GETDATE())
     );
+~~~
+### SQL OUTPUT
+---
+ -  Retrieve the total sales for each product category.
+ ![retrieve the total number of customers from each region](https://github.com/user-attachments/assets/7af095e7-d409-4492-ac0b-ee2b7858a98d)
+
+ - Find the most popular subscription type by the number of customers.
+
+![ind the most popular subscription type by the number of customers](https://github.com/user-attachments/assets/77eb29a2-6d7d-4b57-b46e-c23ab2d441bb)
+ - Find the highest-selling product by total sales value.
+
+![find the highest-selling product by total sales value](https://github.com/user-attachments/assets/e31c80b3-8b40-4489-adc8-e7e4d802dcf1)
+ -  calculate total revenue per product.
+
+![calculate total revenue per product](https://github.com/user-attachments/assets/0f9962da-175f-49dc-ae25-2ad9374d8343)
+ - calculate monthly sales totals for the current year
+
+![calculate monthly sales totals for the current year](https://github.com/user-attachments/assets/a3c44f16-2f75-4d9f-a2b4-76c9bc737db2)
+ - find the top 5 customers by total purchase amount.
+   
+![find the top 5 customers by total purchase amount](https://github.com/user-attachments/assets/80331b05-f987-4ff8-8f1e-ccdf0675ef4c)
+
+ - calculate the percentage of total sales contributed by each region.
+
+![calculate the percentage of total sales contributed by each region](https://github.com/user-attachments/assets/22b38ba2-9fac-4ff2-abca-82346ebd84b8)
+
+- identify products with no sales in the last quarter.
+
+![identify products with no sales in the last quarter](https://github.com/user-attachments/assets/0670fcf2-ee30-4041-8a6d-3e4093ad1268)
+
+
+
+
 
 
