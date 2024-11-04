@@ -2,7 +2,28 @@
 ---
 ### Project Title : Sales Record Analysis
 ---
-### Project Overview
+[Project Overview](#project-overview)
+
+[Data Sourses](#data-source)
+
+[Tools and Technologies](#tools-and-Technologies)
+
+[Data Cleaning and Preparations](#data-cleaning-and-preparations)
+
+[Steps for Data Cleaning and Preparation](#steps-for-data-cleaning-and-preparation)
+
+[Questions to be answered after initial exploration](#questions-to-be-answered-after-initial-exploration)
+
+[ Data Analysis Using SQL](#data-analysis-using-sql)
+
+[SQL OUTPUT](#sql-output)
+
+[Customer Data Sql Code](#customer-data-sql-code)
+
+[SQL OUTPUT 2](#sql-output-2)
+
+[POWER BI VISUALS](#power-bi-visuals)
+
 Project Overview
 This project focuses on analyzing sales and customer data to uncover actionable insights that can drive business decisions. Using data on product sales, customer demographics, subscription trends, and regional performance, the goal is to create an interactive dashboard that highlights key metrics and trends, helping stakeholders understand overall business health and identify growth opportunities.
 
@@ -43,7 +64,7 @@ The data cleaning and preparation phase involves transforming raw data into a st
 - Handling Missing Values:
   
 ---
-### Exploratory Data Analysis
+- Exploratory Data Analysis
 
   1.  Identify columns with missing values and assess their impact on analysis.
   2.  Data correction:
@@ -55,7 +76,7 @@ The data cleaning and preparation phase involves transforming raw data into a st
 - Total Sales: Create a calculated field for total sales, such as Total Sales = Quantity * Unit Price.
 - Subscription Duration: Calculate the length of each customer’s subscription based on Start Date and End Date.
 ---
-  ### Questions to be answered after initial exploration
+### Questions to be answered after initial exploration
  - Excel:
    - Perform an initial exploration of the sales data. Use pivot tables to summarize 
      total sales by product, region, and month.
@@ -240,6 +261,8 @@ WHERE
 
 ![identify products with no sales in the last quarter](https://github.com/user-attachments/assets/0670fcf2-ee30-4041-8a6d-3e4093ad1268)
 
+### Customer Data Sql Code
+---
 ~~~ SQL CUSTOMER DATA
 CREATE TABLE Customers (
     CustomerID INT, 
