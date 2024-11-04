@@ -82,4 +82,133 @@ The data cleaning and preparation phase involves transforming raw data into a st
 ![Subscription Visuals](https://github.com/user-attachments/assets/1c511d18-830d-4019-8d68-2462063b338b)
 
 
+### Data Analysis Using SQL
+---
+ ~~~ SQL
+
+CREATE TABLE SalesData (
+    OrderID INT,
+    CustomerId VARCHAR(50),
+    Product VARCHAR(50),
+    Region VARCHAR(50),
+    OrderDate DATE,
+    Quantity INT,
+    UnitPrice DECIMAL(10, 2)
+);
+
+
+
+
+
+BULK INSERT SalesData
+FROM 'C:\Users\Olabamidele\Desktop\salesdata.txt'
+WITH (
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    FIRSTROW = 2,
+    DATAFILETYPE = 'char',  
+    TABLOCK
+);
+--1. Retrieve the Total Sales for Each Product Category
+SELECT 
+    Product, 
+    SUM(Quantity * UnitPrice) AS TotalSales
+FROM 
+    SalesData
+GROUP BY 
+    Product;
+--2. Find the Number of Sales Transactions in Each Region
+
+SELECT 
+    Region, 
+    COUNT(OrderID) AS NumberOfTransactions
+FROM 
+    SalesData
+GROUP BY 
+    Region;
+
+--3. Find the Highest-Selling Product by Total Sales Value
+SELECT TOP 1
+    Product, 
+    SUM(Quantity * UnitPrice) AS TotalSales
+FROM 
+    SalesData
+GROUP BY 
+    Product
+ORDER BY 
+    TotalSales DESC;
+
+
+--4. Calculate Total Revenue Per Product
+SELECT 
+    Product, 
+    SUM(Quantity * UnitPrice) AS TotalRevenue
+FROM 
+    SalesData
+group by 
+    Product;
+
+--5. Calculate Monthly Sales Totals for the Current Year
+
+SELECT 
+    FORMAT(OrderDate, 'yyyy-MM') AS Month, 
+    SUM(Quantity * UnitPrice) AS MonthlySales
+FROM 
+    SalesData
+WHERE 
+    YEAR(OrderDate) = YEAR(GETDATE())  -- Assuming current year is derived from the system
+GROUP BY 
+    FORMAT(OrderDate, 'yyyy-MM')
+ORDER BY 
+    Month;
+
+--6. Find the Top 5 Customers by Total Purchase Amount
+
+SELECT TOP 5
+    CustomerId, 
+    SUM(Quantity * UnitPrice) AS TotalPurchaseAmount
+FROM 
+    SalesData
+GROUP BY 
+    CustomerId
+ORDER BY 
+    TotalPurchaseAmount DESC;
+
+
+
+--7. Calculate the Percentage of Total Sales Contributed by Each Region
+
+WITH RegionSales AS (
+    SELECT 
+        Region, 
+        SUM(Quantity * UnitPrice) AS RegionTotalSales
+    FROM 
+        SalesData
+    WHERE 
+        Region IS NOT NULL
+    GROUP BY 
+        Region
+)
+SELECT 
+    Region, 
+    RegionTotalSales, 
+    (RegionTotalSales * 100.0) / (SELECT SUM(Quantity * UnitPrice) FROM SalesData) AS PercentageOfTotalSales
+FROM 
+    RegionSales;
+
+--8. Identify Products with No Sales in the Last Quarter
+SELECT 
+    DISTINCT Product
+FROM 
+    SalesData
+WHERE 
+    Product NOT IN (
+        SELECT 
+            DISTINCT Product
+        FROM 
+            SalesData
+        WHERE 
+            OrderDate >= DATEADD(QUARTER, -1, GETDATE())
+    );
+
 
