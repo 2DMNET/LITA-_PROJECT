@@ -84,7 +84,7 @@ The data cleaning and preparation phase involves transforming raw data into a st
 
 ### Data Analysis Using SQL
 ---
- ~~~ SQL
+ ~~~ SQL SALES DATA
 
 CREATE TABLE SalesData (
     OrderID INT,
@@ -239,6 +239,116 @@ WHERE
 - identify products with no sales in the last quarter.
 
 ![identify products with no sales in the last quarter](https://github.com/user-attachments/assets/0670fcf2-ee30-4041-8a6d-3e4093ad1268)
+
+~~~ SQL CUSTOMER DATA
+CREATE TABLE Customers (
+    CustomerID INT, 
+	CustomerName VARCHAR(50),
+    Region VARCHAR(50),                     
+    SubscriptionType VARCHAR(50),             
+    SubscriptionStartDate DATE,               
+    SubscriptionEndDate DATE,                 
+    Cancelled VARCHAR(20),           
+    Revenue DECIMAL(10, 2)                    
+);
+--- Reading the dataset into Table
+BULK INSERT Customers
+FROM 'C:\Users\Olabamidele\Documents\CustomerSub.txt'
+WITH (
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    FIRSTROW = 2,
+    DATAFILETYPE = 'char',  
+    TABLOCK
+);
+----1. Retrieve the total number of customers from each region:
+SELECT 
+    Region, 
+    COUNT(CustomerID) AS TotalCustomers
+FROM 
+    Customers
+GROUP BY 
+    Region;
+
+----2.Find the most popular subscription type by the number of customers:
+
+SELECT Top 1
+    SubscriptionType, 
+    COUNT(CustomerID) AS CustomerCount
+FROM 
+    Customers
+GROUP BY 
+    SubscriptionType
+ORDER BY 
+    CustomerCount DESC
+
+----3. Find customers who canceled their subscription within 6 months:
+
+SELECT 
+    CustomerID, 
+    SubscriptionType, 
+    DATEDIFF(MONTH, SubscriptionStartDate, SubscriptionEndDate) AS DurationInMonths
+FROM 
+    Customers
+WHERE 
+    Cancelled = 'True' 
+    AND DATEDIFF(MONTH, SubscriptionStartDate, SubscriptionEndDate) <= 6; 
+
+---4. Calculate the average subscription duration for all customers:
+
+SELECT 
+    AVG(DATEDIFF(MONTH, SubscriptionStartDate, 
+        ISNULL(SubscriptionEndDate, GETDATE()))) AS AverageSubscriptionDurationInMonths
+FROM 
+    Customers;
+
+----5. Find customers with subscriptions longer than 12 months:
+
+SELECT 
+    CustomerID, 
+    SubscriptionType, 
+    DATEDIFF(MONTH, SubscriptionStartDate, 
+        ISNULL(SubscriptionEndDate, GETDATE())) AS DurationInMonths
+FROM 
+    Customers
+WHERE 
+    DATEDIFF(MONTH, SubscriptionStartDate, 
+        ISNULL(SubscriptionEndDate, GETDATE())) > 12;
+
+---6. Calculate total revenue by subscription type:
+
+SELECT 
+    SubscriptionType, 
+    SUM(Revenue) AS TotalRevenue
+FROM 
+    Customers
+GROUP BY 
+    SubscriptionType;
+
+----7. Find the top 3 regions by subscription cancellations:
+
+SELECT Top 3
+    Region, 
+    COUNT(CustomerID) AS CanceledSubscriptions
+FROM 
+    Customers
+WHERE 
+    Cancelled = 'True'
+GROUP BY 
+    Region
+ORDER BY 
+    CanceledSubscriptions DESC
+
+
+----8. Find the total number of active and canceled subscriptions:
+
+SELECT 
+    Cancelled SubscriptionStatus, 
+    COUNT(CustomerID) AS TotalSubscriptions
+FROM 
+    Customers
+GROUP BY 
+    Cancelled;
 
 
 
