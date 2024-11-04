@@ -381,6 +381,17 @@ GROUP BY
 
 ![8](https://github.com/user-attachments/assets/3ddf585b-c227-4162-a8d5-fbb07d37ee2b)
 
+### POWER BI VISUALS
+- Power BI:
+  - The dashboard should include a sales overview, top-performing products, and 
+    regional breakdowns.
+
+![Lita Sales Report](https://github.com/user-attachments/assets/ce72597c-311a-4402-ab5c-5b4b1a75958c)
+  - Build a Power BI dashboard that visualizes key customer segments, 
+    cancellations, and subscription trends. Include slicers for interactive analysis.
+
+![Customers Dashboard ](https://github.com/user-attachments/assets/0fc24d87-527b-4738-806e-f730e2aadde7)
+
 
 
 
