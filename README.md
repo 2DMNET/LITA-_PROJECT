@@ -4,7 +4,7 @@
 ---
 [Project Overview](#project-overview)
 
-[Data Sourses](#data-source)
+[Data Sources](#data-sources)
 
 [Tools and Technologies](#tools-and-Technologies)
 
@@ -35,7 +35,7 @@ Understand Customer Segments: Segment customers by demographics to identify high
 Monitor Subscription and Retention Trends: Analyze subscription types, average subscription duration, and cancellation rates across regions.
 Regional Insights: Breakdown sales and cancellations by region to guide targeted marketing and retention strategies.
 
-### Data Sourses
+### Data Sources
 The Main data source used was LITA Capstone Dataset which is an excel workbook with SalesData and CustomerData worksheets.
 
 ---
