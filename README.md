@@ -27,6 +27,7 @@
 [Recommendations](#recommendations)
 
 Project Overview
+---
 This project focuses on analyzing sales and customer data to uncover actionable insights that can drive business decisions. Using data on product sales, customer demographics, subscription trends, and regional performance, the goal is to create an interactive dashboard that highlights key metrics and trends, helping stakeholders understand overall business health and identify growth opportunities.
 
 Objectives
