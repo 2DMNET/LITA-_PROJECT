@@ -75,7 +75,7 @@ The data cleaning and preparation phase involves transforming raw data into a st
     -   Check each column’s data type to ensure it aligns with its expected format (e.g., Date columns as DateTime, Sales as Decimal or Integer).
     -   Parse date fields if they’re formatted inconsistently, ensuring they follow a standard date format.
     -   Removing Duplicates
-
+    -   
 - Total Sales: Create a calculated field for total sales, such as Total Sales = Quantity * Unit Price.
 - Subscription Duration: Calculate the length of each customer’s subscription based on Start Date and End Date.
 ---
