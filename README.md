@@ -1,6 +1,6 @@
 # LITA_PROJECT_Documentation 
 ---
-### Project Title : Sales Record Analysis 
+### Project Title : Sales Record Analysis
 ---
 [Project Overview](#project-overvieww)
 
